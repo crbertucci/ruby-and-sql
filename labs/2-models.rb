@@ -19,7 +19,33 @@ Salesperson.destroy_all
 # 1a. check out the schema file
 # 1b. check out the model file
 
+puts "Salespeople: #{Salesperson.all.count}"
+
 # 2. insert 1-2 rows in salespeople table.
+
+# initialize an empty salesperson row (aka hash)
+
+salesperson = Salesperson.new
+
+#assign values to each key (aka column) of the hash
+
+salesperson ["first_name"] = "Ben"
+salesperson ["last_name"] = "Block"
+salesperson ["email"] = "block@hey.com"
+
+# insert (aka save) aka insert the new hash (aka row) into the table
+
+salesperson.save 
+
+#repeat
+salesperson = Salesperson.new
+
+salesperson ["first_name"] = "Brian"
+salesperson ["last_name"] = "Eng"
+salesperson ["email"] = "eng@hey.com"
+salesperson.save 
+
+puts "Salespeople: #{Salesperson.all.count}"
 
 # 3. write code to display how many salespeople rows are in the database
 
@@ -27,6 +53,8 @@ Salesperson.destroy_all
 # Salespeople: 2
 
 # 4. modify/update column data for a row in the salespeople table.
+
+
 
 # CHALLENGE:
 # 5. write code to display each salesperson's full name
