@@ -45,16 +45,20 @@ salesperson ["last_name"] = "Eng"
 salesperson ["email"] = "eng@hey.com"
 salesperson.save 
 
-puts "Salespeople: #{Salesperson.all.count}"
+
 
 # 3. write code to display how many salespeople rows are in the database
 
 # ---------------------------------
 # Salespeople: 2
 
+puts "Salespeople: #{Salesperson.all.count}"
+
 # 4. modify/update column data for a row in the salespeople table.
 
-
+brian = Salesperson.find_by({"first_name" => "Brian", "last_name" => "Eng"})
+brian["last_name"] = "Taco"
+brian.save
 
 # CHALLENGE:
 # 5. write code to display each salesperson's full name
@@ -63,3 +67,11 @@ puts "Salespeople: #{Salesperson.all.count}"
 # Salespeople: 2
 # Ben Block
 # Brian Eng
+
+# puts "Ben Block" (cheating)
+
+# puts "Brian Eng" (cheating)
+
+salespeople = Salesperson.all
+for salesperson in salespeople
+    puts "#{person["first_name"],["last_name"]}"
